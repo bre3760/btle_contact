@@ -1,6 +1,9 @@
 import time
 from bluepy.btle import Scanner, DefaultDelegate
 
+#Erase content of previus log file
+open('log.txt', 'w').close()
+
 class ScanDelegate(DefaultDelegate):
     def __init__(self):
         DefaultDelegate.__init__(self)
@@ -26,19 +29,12 @@ def getdistance(rssi):
             return 0.89976 * ratio**7.7095 + 0.111
 
 
-def log(address, rssi, distance):
+def log_file(address, rssi, distance):
     logfile = open("log.txt","a")
-    logfile.write(f"Device: {address} - RSSI: {rssi} - Distance: {distance} meter")
+    logfile.write(f"Device: {address} - RSSI: {rssi} - Distance: {distance}\n")
     logfile.close()
 
-
 for dev in devices:
-
-    #erase the content of the previous log file
-    file = open("log.txt","r+")
-    file.truncate(0)
-    file.close()
-    distance = getdistance(dev.rssi)
-	log(dev.addr, dev.rssi, distance)
-    print ("Device %s (%s), RSSI=%d dB, distance=%.2f meter" % (dev.addr, dev.addrType, dev.rssi, distance))
+    print ("Device %s (%s), RSSI=%d dB, distance=%.2f meter" % (dev.addr, dev.addrType, dev.rssi, getdistance(dev.rssi)))
+    log_file(dev.addr, dev.rssi, getdistance(dev.rssi))
     print(" ")	
