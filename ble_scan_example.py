@@ -15,10 +15,12 @@ class ScanDelegate(DefaultDelegate):
             print ("Received new data from", dev.addr)
 
 scanner = Scanner().withDelegate(ScanDelegate())
-devices = scanner.scan(10.0)
+devices = scanner.scan(5.0)
 
 def getdistance(rssi):
+
     txpower = -59   #one meter away RSSI
+    #txpower = 8.5
     if rssi == 0:
         return -1
     else:
@@ -35,6 +37,8 @@ def log_file(address, rssi, distance):
     logfile.close()
 
 for dev in devices:
-    print ("Device %s (%s), RSSI=%d dB, distance=%.2f meter" % (dev.addr, dev.addrType, dev.rssi, getdistance(dev.rssi)))
+    print ("Device %s (%s), RSSI=%d dBm, distance=%.2f meter" % (dev.addr, dev.addrType, dev.rssi, getdistance(dev.rssi)))
+    #for (adtype, desc, value) in dev.getScanData():
+       # print( "  %s = %s" % (desc, value))
     log_file(dev.addr, dev.rssi, getdistance(dev.rssi))
-    print(" ")	
+    print(" ")

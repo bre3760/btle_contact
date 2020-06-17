@@ -1,0 +1,11 @@
+Device: b8:27:eb:a9:6e:9d - RSSI: 0 - Distance: -1
+Device: 59:c2:79:98:27:c5 - RSSI: 0 - Distance: -1
+Device: ec:81:93:2d:7a:a5 - RSSI: -82 - Distance: 11.494897935141552
+Device: 69:23:4a:38:04:7f - RSSI: -88 - Distance: 19.732502466971397
+Device: 59:32:ac:88:57:fc - RSSI: 0 - Distance: -1
+Device: c0:97:27:05:56:4f - RSSI: -82 - Distance: 11.494897935141552
+Device: fc:03:9f:60:fb:26 - RSSI: -82 - Distance: 11.494897935141552
+Device: 38:f9:d3:5d:01:2a - RSSI: -74 - Distance: 5.270231810002098
+Device: 14:ab:57:dc:be:04 - RSSI: -84 - Distance: 13.819005003320147
+Device: 4c:32:75:9d:88:64 - RSSI: 0 - Distance: -1
+Device: 53:4d:7a:d8:b0:ef - RSSI: 0 - Distance: -1
