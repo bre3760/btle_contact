@@ -20,7 +20,7 @@ devices = scanner.scan(5.0)
 def getdistance(rssi):
 
     txpower = -59   #one meter away RSSI
-    #txpower = 8.5
+   
     if rssi == 0:
         return -1
     else:
@@ -38,7 +38,7 @@ def log_file(address, rssi, distance):
 
 for dev in devices:
     print ("Device %s (%s), RSSI=%d dBm, distance=%.2f meter" % (dev.addr, dev.addrType, dev.rssi, getdistance(dev.rssi)))
-    #for (adtype, desc, value) in dev.getScanData():
-       # print( "  %s = %s" % (desc, value))
+    for (adtype, desc, value) in dev.getScanData():
+        print( "  %s = %s" % (desc, value))
     log_file(dev.addr, dev.rssi, getdistance(dev.rssi))
     print(" ")
