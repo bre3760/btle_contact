@@ -11,6 +11,7 @@ For the raspberry pi
 -install dependencies (sudo apt-get install python3-pip python-dev libbluetooth-dev libboost-python-dev libboost-thread-dev gir1.2-glib-2.0 librust-glib-sys-dev)
 
 -decompress gattlib-0.20150805.tar.gz, enter in the folder, and install it 
+
 tar -zxvf gattlib-0.20150805.tar.gz
 
 cd gattlib-0.20150805
