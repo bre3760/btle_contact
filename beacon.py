@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PyBluez ble example beacon.py
+"""PyBluez ble beacon.py
 Advertises a bluethooth low energy beacon for 15 seconds.
 """
 
